@@ -5,7 +5,9 @@ export default class ChildComponent extends React.Component {
     return (
       <div>
         <h1>
-          {this.props.arrayProp}
+          {this.props.arrayProp.map((item, index) => {
+            return `Student ${index + 1} :${item + (index != 2 ? ', ' : '\n')}`;
+          })}
           <br />
           {this.props.stringProp}
           <br />
